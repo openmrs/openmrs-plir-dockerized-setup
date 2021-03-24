@@ -29,9 +29,9 @@ To run the project , folow the instructions below .
 
 
 
-After Logging into OpenHIM  ([see more](https://openhimreadthedocs.io/en/v1.4.0/getting-started.html)), Import the Config-file inside the Config folder ie  config/openhim-config.json .
+ After Logging into OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), Import the Config-file inside the Config folder ie     config/openhim-config.json .
 
-Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
+ Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
 
 
 4. Load the necesary TX_PVLS [Measure](https://wiki.openmrs.org/display/projects/FHIR+Measure+Resources+For+PLIR) and [Library](https://wiki.openmrs.org/display/projects/Sample+FHIR+CQL+Libraries+for+the+Calculation+of+TX_PVLS) Resources into the Hapi FHir  . see how to [load the Resources](https://wiki.openmrs.org/display/projects/Steps+For+Testing+Calculation+of+TX-PVLS+Indicator+Using+CQL) into Hapi Fhir .
