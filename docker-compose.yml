@@ -1,0 +1,85 @@
+version: '2.1'
+services:
+  openmrs-referenceapplication-mysql:
+    restart: "always"
+    image: mysql:5.6
+    command: "mysqld --character-set-server=utf8 --collation-server=utf8_general_ci"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=openmrs
+      - MYSQL_ROOT_PASSWORD=Admin123
+      - MYSQL_USER=openmrs
+      - MYSQL_PASSWORD=Admin123
+      - MYSQL_ROOT_HOST=%  
+    healthcheck:
+      test: "exit 0"
+    volumes:
+      - openmrs-referenceapplication-mysql-data:/var/lib/mysql
+      - ./volumes/mysql.cnf:/etc/mysql/conf.d/custom.cnf  # mysql config preconfigured to allow binlog/debezium
+      #- ./data:/var/lib/mysql
+      - ./volumes/dbdump:/docker-entrypoint-initdb.d 
+
+  openmrs-referenceapplication:
+    restart: "always"
+    image: openmrs/openmrs-reference-application-distro:2.11.0
+    depends_on:
+      - openmrs-referenceapplication-mysql
+    ports:
+      - "8080:8080"
+    environment:
+      DB_DATABASE: ${MYSQL_DB:-openmrs}
+      DB_HOST: openmrs-referenceapplication-mysql
+      DB_USERNAME: ${MYSQL_USER:-openmrs}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-Admin123}
+      DB_CREATE_TABLES: 'false'
+      DB_AUTO_UPDATE: 'false'
+      MODULE_WEB_ADMIN: 'true'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/openmrs/"]
+      timeout: 20s
+    volumes:
+      - openmrs-referenceapplication-data:/usr/local/tomcat/.OpenMRS/
+      - /usr/local/tomcat/.OpenMRS/modules/ # do not store modules in data
+      - /usr/local/tomcat/.OpenMRS/owa/ # do not store owa in data
+
+  mongo:
+    container_name: openhim-mongo
+    ports:
+      - "27017:27017"
+    image: mongo:3.4
+    
+  openhim-core:
+    container_name: openhim-core
+    image: jembi/openhim-core
+    environment:
+      - mongo_url=mongodb://mongo/openhim
+      - mongo_atnaUrl=mongodb://mongo/openhim
+    ports:
+      - "8085:8080"
+      - "5000:5000"
+      - "5001:5001"
+      - "5050:5050"
+      - "5051:5051"
+      - "5052:5052"
+      - "7788:7788" 
+    depends_on:
+      - mongo
+  openhim-console:
+    container_name: openhim-console
+    image: jembi/openhim-console
+    ports:
+        - "9000:80"
+    volumes:
+      - ./volumes/default.json:/usr/share/nginx/html/config/default.json
+
+  hapi-fhir-jpaserver-starter:
+    image: openmrsinfra/openmrs-hapi-fhir:openmrs-fhir-plir_cql
+    container_name: hapi-fhir-cql
+    restart: on-failure
+    ports:
+      - "8090:8080"   
+ 
+volumes:
+   openmrs-referenceapplication-mysql-data:
+   openmrs-referenceapplication-data:
