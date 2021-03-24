@@ -24,7 +24,7 @@ To run the project , folow the instractions below .
 |---------- |:-------------:|------:                       |
 | OpenMRS   |  http://localhost:8080/openmrs  | admin : Admin123 |
 | OpenHIM   |    http://localhost:9000  |  root@openhim.org : openhim-password |
-| Hapi FHir | http://localhost:8090d |    hapi : hapi123|
+| Hapi FHir | http://localhost:8090 |    hapi : hapi123|
 
 
 
