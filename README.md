@@ -5,14 +5,14 @@ see [PLIR archtecture](https://wiki.openmrs.org/display/projects/Architectural+D
 Ensure you have Docker and Docker compose installed locally.
 See Docker Installation Instructions for your environment.  If running on Linux, check https://docs.docker.com/compose/install/ to install docker compose.
 
-To run the project , folow the instractions below .
+To run the project , folow the instructions below .
 1. Clone the Repository locally
 
-        `git clone https://github.com/openmrs/openmrs-plir-dockerized-setup.git`
+        git clone https://github.com/openmrs/openmrs-plir-dockerized-setup.git
 
 2. Move to the project root directory and Spin Up the pre-configured OpenMRS ,OpenHIM and Hapi-Fhir instances . 
 
-       `docker-compose up`
+       docker-compose up
 
   
   
