@@ -1,0 +1,76 @@
+{
+    "resourceType": "Library",
+    "id": "TX-PVLS",
+    "url": "http://fhir.org/plir/Library/TX-PVLS",
+    "version": "0.0.1",
+    "name": "TX_PVLS",
+    "status": "draft",
+    "experimental": true,
+    "relatedArtifact": [
+        {
+            "type": "depends-on",
+            "resource": "http://hl7.org/fhir/Library/FHIRHelpers|4.0.1"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://openconceptlab.org/orgs/CIEL/sources/CIEL"
+        }
+    ],
+    "parameter": [
+        {
+            "name": "Measurement Period",
+            "use": "in",
+            "min": 0,
+            "max": "1",
+            "type": "Period"
+        },
+        {
+            "name": "Patient",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "type": "Patient"
+        },
+        {
+            "name": "Initial Population",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "type": "boolean"
+        },
+        {
+            "name": "Denominator",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "type": "boolean"
+        },
+        {
+            "name": "Viral Load Check",
+            "use": "out",
+            "min": 0,
+            "max": "*",
+            "type": "Observation"
+        },
+         {
+            "name": "Viral Load Suppresed",
+            "use": "out",
+            "min": 0,
+            "max": "*",
+            "type": "Observation"
+        },
+        {
+            "name": "Numerator",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "type": "boolean"
+        }
+    ],
+    "content": [
+        {
+            "contentType": "text/cql",
+            "data": "bGlicmFyeSBUWF9QVkxTIHZlcnNpb24gJzAuMC4xJwoKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycwoKY29kZXN5c3RlbSAiQ0lFTCI6ICdodHRwczovL29wZW5jb25jZXB0bGFiLm9yZy9vcmdzL0NJRUwvc291cmNlcy9DSUVMJwoKY29kZSAiVmlyYWwgTG9hZCBRdWFudGl0YXRpdmUiOiAnODU2JyBmcm9tICJDSUVMIiBkaXNwbGF5ICdISVYgdmlyYWwgbG9hZCcKCmNvZGUgIlZpcmFsIExvYWQgUXVhbGl0YXRpdmUiOiAnMTMwNScgZnJvbSAiQ0lFTCIgZGlzcGxheSAnSElWIFZJUkFMIExPQUQsIFFVQUxJVEFUSVZFJwoKY29kZSAiVmlyYWwgTG9hZCBRdWFsaXRhdGl2ZSBWYWx1ZSI6ICcxMzA2JyBmcm9tICJDSUVMIiBkaXNwbGF5ICdCRVlPTkQgREVURUNUQUJMRSBMSU1JVCcKCnBhcmFtZXRlciAiTWVhc3VyZW1lbnQgUGVyaW9kIiBJbnRlcnZhbDxEYXRlVGltZT4KCmNvbnRleHQgUGF0aWVudAoKZGVmaW5lICJEZW5vbWluYXRvciI6CgkiSW5pdGlhbCBQb3B1bGF0aW9uIgoKZGVmaW5lICJOdW1lcmF0b3IiOgoJZXhpc3RzICJWaXJhbCBMb2FkIFN1cHByZXNlZCIKCmRlZmluZSAiVmlyYWwgTG9hZCBDaGVjayI6CgkoIFtPYnNlcnZhdGlvbjogIlZpcmFsIExvYWQgUXVhbnRpdGF0aXZlIl0KCQl1bmlvbiBbT2JzZXJ2YXRpb246ICJWaXJhbCBMb2FkIFF1YWxpdGF0aXZlIl0gKSBvCgkJd2hlcmUgby5zdGF0dXMgaW4geydmaW5hbCcsICdhbWVuZGVkJywgJ2NvcnJlY3RlZCd9CgkJYW5kIG8uZWZmZWN0aXZlIGluIGRheSBvZiAiTWVhc3VyZW1lbnQgUGVyaW9kIgoKZGVmaW5lICJWaXJhbCBMb2FkIFN1cHByZXNlZCI6CgkgICAiVmlyYWwgTG9hZCBDaGVjayIgdiB3aGVyZSAodi52YWx1ZSBhcyBRdWFudGl0eSkgIDwgMTAwMAoJICAgCW9yIHYudmFsdWUuY29kaW5nWzFdPSAiVmlyYWwgTG9hZCBRdWFsaXRhdGl2ZSBWYWx1ZSIKCQlvciB2LnZhbHVlLmNvZGluZ1syXT0gIlZpcmFsIExvYWQgUXVhbGl0YXRpdmUgVmFsdWUiICAgCgpkZWZpbmUgIkluaXRpYWwgUG9wdWxhdGlvbiI6CglleGlzdHMgIlZpcmFsIExvYWQgQ2hlY2si"
+        }
+    ]
+}
