@@ -37,7 +37,7 @@ To run the project , folow the instructions below .
 4. Load the necesary TX_PVLS [Measure](https://wiki.openmrs.org/display/projects/FHIR+Measure+Resources+For+PLIR) and [Library](https://wiki.openmrs.org/display/projects/Sample+FHIR+CQL+Libraries+for+the+Calculation+of+TX_PVLS) Resources into the Hapi FHir . 
 you can load the resources directly from the resources folder directly using the loadResources script. run the command below from the project Root directory
 
-       chmod +x * ; ./loadResources.sh
+       chmod +x * ; ./load-resources.sh
 
 see how to [load the Resources](https://wiki.openmrs.org/display/projects/Steps+For+Testing+Calculation+of+TX-PVLS+Indicator+Using+CQL) into Hapi Fhir using PostMan client.
 
