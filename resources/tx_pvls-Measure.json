@@ -1,0 +1,83 @@
+{
+    "resourceType": "Measure",
+    "id": "TX-PVLS",
+    "identifier": [
+        {
+            "use": "official",
+            "value": "TX_PVLS"
+        }
+    ],
+    "version": "0.0.1",
+    "title": "Sample TX_PVLS population selection criteria and evaluation",
+    "status": "draft",
+    "experimental": true,
+    "library": [
+        "Library/TX-PVLS"
+    ],
+    "scoring": {
+        "coding": [
+            {
+                "code": "proportion"
+            }
+        ]
+    },
+    "group": [
+        {
+            "id": "population",
+            "population": [
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "code": "initial-population"
+                            }
+                        ]
+                    },
+                    "criteria": {
+                        "language": "application/x-fhir-query",
+                        "expression": "Observation?code=https%3A%2F%2Fopenconceptlab.org%2Forgs%2FCIEL%2Fsources%2FCIEL%7C856,https%3A%2F%2Fopenconceptlab.org%2Forgs%2FCIEL%2Fsources%2FCIEL%7C1305&_include=Observation%3Apatient"
+                    }
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "code": "initial-population"
+                            }
+                        ]
+                    },
+                    "criteria": {
+                        "language": "text/cql",
+                        "expression": "Initial Population"
+                    }
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "code": "denominator"
+                            }
+                        ]
+                    },
+                    "criteria": {
+                        "language": "text/cql",
+                        "expression": "Denominator"
+                    }
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "code": "numerator"
+                            }
+                        ]
+                    },
+                    "criteria": {
+                        "language": "text/cql",
+                        "expression": "Numerator"
+                    }
+                }
+            ]
+        }
+    ]
+}
