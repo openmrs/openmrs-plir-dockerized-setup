@@ -27,7 +27,7 @@ To run the project , folow the instructions below .
 
 
 
-    After Logging into OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), Import the Config-file inside the Config folder ie         config/openhim-config.json .
+   After Logging into OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), Import the Config-file inside the Config folder ie         config/openhim-config.json .
 
    Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
 
