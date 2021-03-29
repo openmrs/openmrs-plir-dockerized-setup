@@ -5,8 +5,8 @@ see [PLIR archtecture](https://wiki.openmrs.org/display/projects/Architectural+D
 Ensure you have Docker and Docker compose installed locally.
 See Docker Installation Instructions for your environment.  If running on Linux, check https://docs.docker.com/compose/install/ to install docker compose.
 
-To run the project , folow the instructions below .
-1. Clone the Repository locally
+To run the project , follow the instructions below .
+1. Clone the repository locally
 
         git clone https://github.com/openmrs/openmrs-plir-dockerized-setup.git
 
@@ -52,13 +52,13 @@ To run the project , folow the instructions below .
 
   6. The running Pipeline will listen to any  any data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
 
-  7. Invoke the **collect-data** FHIR Operation using the Get request below to generate the relevant Dataset for TX_PVLS
+  7. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for TX_PVLS
 
 
           GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>
    
 
-  8. Invoke the  **evaluate-measure** FHIR Operation using the Get request below for the  indicator calculation based on CQL evaluation
+  8. Invoke the  **evaluate-measure** FHIR Operation using the GET request below for the  indicator calculation based on CQL evaluation
 
          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date>
 
