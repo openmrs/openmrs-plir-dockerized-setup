@@ -33,7 +33,7 @@ To run the project , follow the instructions below .
 
 
 4. Load the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the resources folder.
- Run the command below from the project Root directory .
+ Run the command below from the project root directory .
 
        chmod +x * ; ./load-resources.sh
 
