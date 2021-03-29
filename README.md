@@ -10,7 +10,7 @@ To run the project , follow the instructions below .
 
         git clone https://github.com/openmrs/openmrs-plir-dockerized-setup.git
 
-2. Move to the project root directory and Spin Up the pre-configured OpenMRS ,OpenHIM and Hapi-Fhir instances . 
+2. Move to the project root directory and spin up the pre-configured OpenMRS ,OpenHIM and Hapi-Fhir instances . 
 
        docker-compose up
  
