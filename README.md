@@ -13,8 +13,7 @@ To run the project , folow the instructions below .
 2. Move to the project root directory and Spin Up the pre-configured OpenMRS ,OpenHIM and Hapi-Fhir instances . 
 
        docker-compose up
-
-  
+ 
   
 3. You should be able to acces the OpenMRS ,OpenHIM and Hapi-Fhir instances  at the following urls
 
@@ -28,18 +27,15 @@ To run the project , folow the instructions below .
 
 
 
+    After Logging into OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), Import the Config-file inside the Config folder ie         config/openhim-config.json .
 
- After Logging into OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), Import the Config-file inside the Config folder ie     config/openhim-config.json .
-
- Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
+   Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
 
 
-4. Load the necesary TX_PVLS [Measure](https://wiki.openmrs.org/display/projects/FHIR+Measure+Resources+For+PLIR) and [Library](https://wiki.openmrs.org/display/projects/Sample+FHIR+CQL+Libraries+for+the+Calculation+of+TX_PVLS) Resources into the Hapi FHir . 
+4. Load the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . 
 you can load the resources directly from the resources folder directly using the loadResources script. run the command below from the project Root directory
 
        chmod +x * ; ./load-resources.sh
-
-see how to [load the Resources](https://wiki.openmrs.org/display/projects/Steps+For+Testing+Calculation+of+TX-PVLS+Indicator+Using+CQL) into Hapi Fhir using PostMan client.
 
 
 5. Spin up the streaming-debezium pipeline  . 
@@ -60,11 +56,9 @@ see how to [load the Resources](https://wiki.openmrs.org/display/projects/Steps+
 
 
           GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>
-
-     see sample [here](https://wiki.openmrs.org/display/projects/Steps+For+Testing+Calculation+of+TX-PVLS+Indicator+Using+CQL)     
+   
 
   8. Invoke the  **evaluate-measure** FHIR Operation using the Get request below for the  indicator calculation based on CQL evaluation
 
          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date>
 
-       see sample resultset [here](https://wiki.openmrs.org/display/projects/Steps+For+Testing+Calculation+of+TX-PVLS+Indicator+Using+CQL)
