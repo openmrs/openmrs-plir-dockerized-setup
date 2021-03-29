@@ -32,8 +32,8 @@ To run the project , folow the instructions below .
    Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
 
 
-4. Load the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . 
- Run the command below from the project Root directory toload the Measure and Library resources intothe HAPI-FHIR server form the resources folder
+4. Load the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the resources folder.
+ Run the command below from the project Root directory .
 
        chmod +x * ; ./load-resources.sh
 
