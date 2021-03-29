@@ -60,5 +60,7 @@ To run the project , follow the instructions below .
 
   8. Invoke the  **evaluate-measure** FHIR Operation using the GET request below for the  indicator calculation based on CQL evaluation
 
-         GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date>
+         GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date> 
+         
+   Note : substitute `<date>` in the GET request with your actual date parameter  .     
 
