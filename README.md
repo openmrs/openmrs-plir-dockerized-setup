@@ -10,11 +10,10 @@ To run the project , follow the instructions below .
 
         git clone https://github.com/openmrs/openmrs-plir-dockerized-setup.git
 
-2. Move to the project root directory and spin up the pre-configured OpenMRS ,OpenHIM and Hapi-Fhir instances . 
+2. Move to the project root directory and spin up the pre-configured OpenMRS ,OpenHIM ,Hapi-Fhir and the streaming-binlog pipeline instances . 
 
-       docker-compose up
- 
-  
+       chmod +x run.sh ; ./run.sh
+
 3. You should be able to acces the OpenMRS ,OpenHIM and Hapi-Fhir instances  at the following urls
 
 
@@ -23,42 +22,27 @@ To run the project , follow the instructions below .
 |---------- |:-------------:|------:                       |
 | OpenMRS   |  http://localhost:8080/openmrs  | admin : Admin123 |
 | OpenHIM   |    http://localhost:9000  |  root@openhim.org : openhim-password |
-| Hapi FHir | http://localhost:8090 |    hapi : hapi123|
+| Hapi FHir | http://localhost:8090 |    hapi : hapi123| 
+
+
+> After Logging in OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), go to the Import/Export tab and import the Config-file inside the Config folder ie  `config/openhim-config.json` .
+
+   Note:
+ * The OpenMRS Instance is pre-loaded with CIEL and a  sample form (HIV_form) to collect TX_PVLS specific data
+
+ * The above script also loads the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the `resources` folder.
+
+  > The running Pipeline will listen to any  any data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
 
 
 
-   After Logging into OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), Import the Config-file inside the Config folder ie         config/openhim-config.json .
-
-   Note that the OpenMRS Instance above is pre-loaded with CIEL and comes with a sample form (TX_PVLS form) to collect TX_PVLS specific data
-
-
-4. Load the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the resources folder.
- Run the command below from the project root directory .
-
-       chmod +x * ; ./load-resources.sh
-
-
-5. Spin up the streaming-debezium pipeline  . 
-
-
-       docker-compose -f pipeline-compose.yml up
-
-
-   Note that you run the above command from the root directory of the cloned repository.
-
-
-
-   You can use the TX_PVLS form pre-loaded in the OpenMRS instance to capture TX_PVLS specific data
-
-  6. The running Pipeline will listen to any  any data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
-
-  7. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for TX_PVLS
+  4. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for TX_PVLS
 
 
           GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>
    
 
-  8. Invoke the  **evaluate-measure** FHIR Operation using the GET request below for the  indicator calculation based on CQL evaluation
+  5. Invoke the  **evaluate-measure** FHIR Operation using the GET request below for the  indicator calculation based on CQL evaluation
 
          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date> 
          

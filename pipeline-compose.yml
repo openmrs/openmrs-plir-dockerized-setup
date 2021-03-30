@@ -2,8 +2,7 @@ version: '2.1'
 
 services:
   streaming-binlog: 
-    #TO DO : needs to be moved to openmrs repo
-    image:  mozzy11/openmrs-fhir-analytics-streaming-binlog:v1
+    image: openmrsinfra/openmrs-fhir-analytics:plir-binlog
     container_name: streaming-pipeline
     network_mode: host
     healthcheck:
