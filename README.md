@@ -25,7 +25,7 @@ To run the project , follow the instructions below .
 | Hapi FHir | http://localhost:8090 |    hapi : hapi123| 
 
 
-> After Logging in OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), go to the Import/Export tab and import the Config-file inside the Config folder ie  `config/openhim-config.json` .
+> After Logging in OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), go to the Export/Import tab and import the config-file inside the `config` folder ie  `config/openhim-config.json` .
 
    Note:
  * The OpenMRS Instance is pre-loaded with CIEL and a  sample form (HIV_form) to collect TX_PVLS specific data
