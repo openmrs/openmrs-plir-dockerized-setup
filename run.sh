@@ -1,8 +1,5 @@
-echo " >>>>>>>>  CLEANING UP EXISTING CONTAINERS "
-docker-compose down  --remove-orphans
-docker-compose -f pipeline-compose.yml down  --remove-orphans
 echo " >>>>>>>>  STARTING OPENHIM , OPENMRS , HAPI-FHIR "
-docker-compose up -d 
+docker-compose up -d  --remove-orphans
 
  sleep 4m
 
