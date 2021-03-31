@@ -46,5 +46,11 @@ To run the project , follow the instructions below .
 
          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date> 
          
-   Note : substitute `<date>` in the GET request with your actual date parameter  .     
+   Note : substitute `<date>` in the GET request with your actual date parameter  .  
+
+   
+   To remove and clean out all created containers and volumes, run
+
+          chmod +x stop.sh ; ./stop.sh
+
 

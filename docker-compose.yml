@@ -3,6 +3,7 @@ services:
   openmrs-referenceapplication-mysql:
     restart: "always"
     image: mysql:5.6
+    container_name: plir-reff-app-mysql
     command: "mysqld --character-set-server=utf8 --collation-server=utf8_general_ci"
     ports:
       - "3306:3306"
@@ -23,6 +24,7 @@ services:
   openmrs-referenceapplication:
     restart: "always"
     image: openmrs/openmrs-reference-application-distro:2.11.0
+    container_name: plir-reff-app
     depends_on:
       - openmrs-referenceapplication-mysql
     ports:
@@ -44,13 +46,13 @@ services:
       - /usr/local/tomcat/.OpenMRS/owa/ # do not store owa in data
 
   mongo:
-    container_name: openhim-mongo
+    container_name: plir-openhim-mongo
     ports:
       - "27017:27017"
     image: mongo:3.4
     
   openhim-core:
-    container_name: openhim-core
+    container_name: plir-openhim-core
     image: jembi/openhim-core
     environment:
       - mongo_url=mongodb://mongo/openhim
@@ -66,7 +68,7 @@ services:
     depends_on:
       - mongo
   openhim-console:
-    container_name: openhim-console
+    container_name: plir-openhim-console
     image: jembi/openhim-console
     ports:
         - "9000:80"
@@ -75,7 +77,7 @@ services:
 
   hapi-fhir-jpaserver-starter:
     image: openmrsinfra/openmrs-hapi-fhir:openmrs-fhir-plir_cql
-    container_name: hapi-fhir-cql
+    container_name: plir-hapi-fhir-cql
     restart: on-failure
     ports:
       - "8090:8080"   

@@ -3,7 +3,7 @@ version: '2.1'
 services:
   streaming-binlog: 
     image: openmrsinfra/openmrs-fhir-analytics:plir-binlog
-    container_name: streaming-pipeline
+    container_name: plir-streaming-pipeline
     network_mode: host
     healthcheck:
       test: "exit 0"
