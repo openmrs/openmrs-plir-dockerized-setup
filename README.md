@@ -46,11 +46,25 @@ To run the project , follow the instructions below .
 
          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date> 
          
-   Note : substitute `<date>` in the GET request with your actual date parameter  .  
+  > Note : substitute `<date>` in the GET request with your actual date parameter  .  
 
-   
-   To remove and clean out all created containers and volumes, run
+   6. You can use a [plir-widget](https://github.com/IntelliSOFT-Consulting/digital_square_notice_d_wp4/tree/master/plir-widget) innitially develeoped by the bahmni team , to easily query and  visualise the Measure report generated from the HAPI-FHIR server .  
+* install the [http-server](https://www.npmjs.com/package/http-server)  .
+ see inginix (proxy) config under  `plir-widget/config/nginx.conf`  . 
+* To run the widget , run the command below from the root directory
+
+
+
+          chmod +x run-widget.sh ; ./run-widget.sh  
+
+
+ * you should be able to access the widget at `http://localhost:7000/` .
+
+>  Procede to select the measure  TX-PVLS ,
+      select the start date and generate the report using the widget
+      
+
+
+ 7. To remove and clean out all created containers and volumes, run
 
           chmod +x stop.sh ; ./stop.sh
-
-
