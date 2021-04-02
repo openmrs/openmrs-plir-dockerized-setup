@@ -48,10 +48,10 @@ To run the project , follow the instructions below .
          
   > Note : substitute `<date>` in the GET request with your actual date parameter  .  
 
-   6. You can use a [plir-widget](https://github.com/mozzy11/plir-widget) innitially develeoped by the bahmni team , to easily query and  visualise the Measure report generated from the HAPI-FHIR server .
+   6. You can use a [plir-widget](https://github.com/mozzy11/plir-widget) innitially develeoped by the bahmni-plir team , to easily query and  visualise the Measure report generated from the HAPI-FHIR server .
    
 * install the [http-server](https://www.npmjs.com/package/http-server)  .
- see inginix (proxy) config under  `plir-widget/config/nginx.conf`  . 
+ see inginix (proxy-server) config under  `plir-widget/config/nginx.conf`  . 
 * To run the widget , run the command below from the root directory
 
 
