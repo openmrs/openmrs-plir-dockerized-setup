@@ -48,7 +48,8 @@ To run the project , follow the instructions below .
          
   > Note : substitute `<date>` in the GET request with your actual date parameter  .  
 
-   6. You can use a [plir-widget](https://github.com/IntelliSOFT-Consulting/digital_square_notice_d_wp4/tree/master/plir-widget) innitially develeoped by the bahmni team , to easily query and  visualise the Measure report generated from the HAPI-FHIR server .  
+   6. You can use a (plir-widget)[https://github.com/mozzy11/plir-widget] innitially develeoped by the bahmni team , to easily query and  visualise the Measure report generated from the HAPI-FHIR server .
+   
 * install the [http-server](https://www.npmjs.com/package/http-server)  .
  see inginix (proxy) config under  `plir-widget/config/nginx.conf`  . 
 * To run the widget , run the command below from the root directory
@@ -68,3 +69,8 @@ To run the project , follow the instructions below .
  7. To remove and clean out all created containers and volumes, run
 
           chmod +x stop.sh ; ./stop.sh
+
+#Main Repositories
+* Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
+* Analytics Engine Pipeline   https://github.com/GoogleCloudPlatform/openmrs-fhir-analytics
+

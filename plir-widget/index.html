@@ -5,9 +5,17 @@
         
         <center><h2> PLIR-WIDGET </h2></center>
 
-      <div style = "border: 1px solid #73AD21 ;margin: 50;" id="tx-pvls-widget"></div>
+      <div style = "border: 1px solid #73AD21; margin : 20px" id="tx-pvls-widget"></div>
       
     
     <script src="resources/index.js"></script>
+
+    <script>
+          //configurable parameters
+          //note that we use a proxy to handle CORS isuues
+          window.fhirBaseUrl = "http://localhost:8899/fhir";
+          window.hapiUser = "hapi";
+          window.hapiPass = "hapi123";
+     </script>
     </body>
 </html>
