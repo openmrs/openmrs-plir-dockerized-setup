@@ -70,7 +70,7 @@ To run the project , follow the instructions below .
 
           chmod +x stop.sh ; ./stop.sh
 
-#Main Repositories
+## Main Repositories
 * Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
 * Analytics Engine Pipeline   https://github.com/GoogleCloudPlatform/openmrs-fhir-analytics
 
