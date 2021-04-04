@@ -12,7 +12,7 @@ To run the project , follow the instructions below .
 
 2. Move to the project root directory and spin up the pre-configured OpenMRS ,OpenHIM ,Hapi-Fhir and the streaming-binlog pipeline instances . 
 
-       chmod +x run.sh ; ./run.sh
+       ./run.sh
 
 3. You should be able to acces the OpenMRS ,OpenHIM and Hapi-Fhir instances  at the following urls
 
@@ -56,7 +56,7 @@ To run the project , follow the instructions below .
 
 
 
-          chmod +x run-widget.sh ; ./run-widget.sh  
+          ./run-widget.sh  
 
 
  * you should be able to access the widget at `http://localhost:7000/` .
@@ -68,7 +68,7 @@ To run the project , follow the instructions below .
 
  7. To remove and clean out all created containers and volumes, run
 
-          chmod +x stop.sh ; ./stop.sh
+          ./stop.sh
 
 ## Main Repositories
 * Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
