@@ -32,9 +32,9 @@ To run the project , follow the instructions below .
 
  * The Openhim instance is pre-configured with with the necesary meta-data
 
-  > The running Pipeline will listen to any  any data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
+  > Wait for the **plir-streaming-pipeline** container to start running before adding any data into OpenMRS. The running Pipeline will then listen to any  data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
 
-
+   
 
   4. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for TX_PVLS
 
@@ -70,7 +70,19 @@ To run the project , follow the instructions below .
 
           ./stop.sh
 
+ ## Regenerating the TX_PVLS Library resource    
+ In case changes have been made to the Library cql logic at  `resources/cql_logic.txt`  , the  TX_PVLS Library resource  at  `resources/tx_pvls-library.json`  can be re-generated .
+
+ * install the [jq](https://linuxhint.com/bash_jq_command/) library 
+
+ * run the command below from the root directory
+
+       ./regenerate-library.sh
+  > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library     
+
 ## Main Repositories
 * Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
 * Analytics Engine Pipeline   https://github.com/GoogleCloudPlatform/openmrs-fhir-analytics
+
+
 
