@@ -30,7 +30,7 @@ To run the project , follow the instructions below .
 
  * The above script also loads the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the `resources` folder.
 
- * The Openhim instance is pre-configured with with the necesary meta-data
+ * The Openhim instance is pre-configured with the necesary meta-data
 
   > Wait for the **plir-streaming-pipeline** container to start running before adding any data into OpenMRS. The running Pipeline will then listen to any  data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
 
