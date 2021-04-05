@@ -70,8 +70,8 @@ To run the project , follow the instructions below .
 
           ./stop.sh
 
- ## Regenerating the TX_PVLS Library resource    
- In case changes have been made to the Library cql logic at  `resources/cql_logic.txt`  , the  TX_PVLS Library resource  at  `resources/tx_pvls-library.json`  can be re-generated .
+ ## Auto Regenerating the TX_PVLS Library resource    
+ In case changes have been made to the Library cql logic at  `resources/cql_logic.txt`  , the  TX_PVLS Library resource  at  `resources/tx_pvls-library.json`  can be auto re-generated .
 
  * install the [jq](https://linuxhint.com/bash_jq_command/) library 
 
