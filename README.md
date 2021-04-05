@@ -25,12 +25,12 @@ To run the project , follow the instructions below .
 | Hapi FHir | http://localhost:8090 |    hapi : hapi123| 
 
 
-> After Logging in OpenHIM  [see more](https://openhim.readthedocs.io/en/v1.4.0/getting-started.html), go to the Export/Import tab and import the config-file inside the `config` folder ie  `config/openhim-config.json` .
-
    Note:
  * The OpenMRS Instance is pre-loaded with CIEL and a  sample form (HIV_form) to collect TX_PVLS specific data
 
  * The above script also loads the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the `resources` folder.
+
+ * The Openhim instance is pre-configured with with the necesary meta-data
 
   > The running Pipeline will listen to any  any data changes  added in to OpenMRS and route them to the FHIR server through OpenHIM.
 
