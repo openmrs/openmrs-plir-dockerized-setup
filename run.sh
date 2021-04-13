@@ -1,5 +1,5 @@
 echo " >>>>>>>>  STARTING OPENHIM , OPENMRS , HAPI-FHIR "
-docker-compose up -d  --remove-orphans
+docker-compose -f docker/docker-compose.yml up -d  --remove-orphans
 
  sleep 3m
 
@@ -35,12 +35,12 @@ hapifhir_start_wait_time=0
   done
  echo "..........HAPI FHIR SERVER STARTED SUCCESSFULLY.............." 
  echo ">>>>>>> LOADING MEASURE AND LIBRARY RESOURCES INTO HAPI FHIR "
-./load-resources.sh
+./scripts/load-resources.sh
  echo "........LOADED MEASURE AND LIBRARY RESOURCES INTO HAPI FHIR ......."
 
  echo ">>>>> Loading client and Chanel Metadata into openhim"
- ./openhim-api.sh root@openhim.org openhim-password -v https://localhost:8085/metadata -d @./config/openhim-config.json -H "Content-Type:application/json"
+ ./scripts/openhim-api.sh root@openhim.org openhim-password -v https://localhost:8085/metadata -d @./config/openhim-config.json -H "Content-Type:application/json"
 
  echo ">>>>>> STARTING STREAMING PIPE LINE "
  
-docker-compose -f pipeline-compose.yml up  
+docker-compose -f docker/pipeline-compose.yml up  

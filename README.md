@@ -77,7 +77,7 @@ To run the project , follow the instructions below .
 
  * run the command below from the root directory
 
-       ./regenerate-library.sh
+       ./scripts/regenerate-library.sh
   > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library     
 
 ## Main Repositories
