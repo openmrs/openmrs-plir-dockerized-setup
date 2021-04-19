@@ -78,7 +78,15 @@ To run the project , follow the instructions below .
  * run the command below from the root directory
 
        ./scripts/regenerate-library.sh
-  > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library     
+  > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library  
+
+  ## BDD TESTING 
+
+  for BDD/E2E TESTING 
+
+  see  [hie-automation-tests](https://github.com/mozzy11/hie-automation-tests) Testing Framework .
+
+  For Testing the PLIR setup , follow steps [here](https://github.com/mozzy11/hie-automation-tests#testing-plir-setup)
 
 ## Main Repositories
 * Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
