@@ -105,7 +105,7 @@ NOTE :The deafult  configuration are mapped to the default configuration in the 
 
 * The Test will work best before you add any data to OpenMRS
 
-You can execute the test with the below statement under the root directory,but first ensure the PLIR pipeline is up and running.
+Execute the test with the  statement below, under the root directory,but first ensure the PLIR pipeline is up and running.
 
 	behave --no-logcapture --include ./features/PLIR
  	
