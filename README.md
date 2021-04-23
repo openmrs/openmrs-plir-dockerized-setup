@@ -80,13 +80,39 @@ To run the project , follow the instructions below .
        ./scripts/regenerate-library.sh
   > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library  
 
-  ## BDD TESTING 
+## TESTING PLIR SETUP
+We use the [hie-automation-tests](https://github.com/CDCgov/hie-automation-tests) framework to test the PLIR pipeline work flow . 
 
-  for BDD/E2E TESTING 
+Clone the  [extended hie-automation-tests](https://github.com/mozzy11/hie-automation-tests) framework that Supports Testing PLIR workflow.
 
-  see  [hie-automation-tests](https://github.com/mozzy11/hie-automation-tests) Testing Framework .
+    git clone https://github.com/mozzy11/hie-automation-tests.git
 
-  For Testing the PLIR setup , follow steps [here](https://github.com/mozzy11/hie-automation-tests#testing-plir-setup)
+see more [details](https://github.com/mozzy11/hie-automation-tests/blob/master/PLIR-TEST.md) 
+### Prerequisites
+
+* Python version >= 3.7
+* Behave version >= 1.2
+* Debezium-FHir-Analytics 
+* OpenMRS
+* OpenHIM 
+* HAPI-FHIR
+
+### Configuration 
+Follow the Intructions at https://github.com/openmrs/openmrs-plir-dockerized-setup to run a full configured  PLIR setup. 
+
+Update the Configuration in the config.json file located under the `features/config` folder . ONly OpenMRS , OpenHIM and HapiFHIR are required
+
+NOTE :The deafult  configuration are mapped to the default configuration in the [dockerized PLIR setup](https://github.com/openmrs/openmrs-plir-dockerized-setup)
+
+You can execute the test with the below statement under the root directory. 
+
+	behave --no-logcapture --include ./features/PLIR
+ 	
+The tests will
+ * Post Obs data into OpenMRS 
+ * Track the transactions in OpenHIM
+ * Check whether the correct TX_PVLS indicator measureScore was calculated in HAPI FHIR   
+
 
 ## Main Repositories
 * Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
