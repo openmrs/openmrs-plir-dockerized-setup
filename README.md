@@ -92,7 +92,7 @@ see more [details](https://github.com/mozzy11/hie-automation-tests/blob/master/P
 
 * Python version >= 3.7
 * Behave version >= 1.2
-* Debezium-FHir-Analytics 
+* Debezium-FHIR-Analytics component
 * OpenMRS
 * OpenHIM 
 * HAPI-FHIR
