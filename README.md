@@ -117,7 +117,7 @@ The tests will
 
 ## Main Repositories
 * Hapi FHir for OpenMRS PLIR https://github.com/openmrs/openmrs-contrib-plm-fhir-server
-* Analytics Engine Pipeline   https://github.com/GoogleCloudPlatform/openmrs-fhir-analytics
+* OpenMRS FHIR Analytics tool   https://github.com/GoogleCloudPlatform/openmrs-fhir-analytics
 
 
 
