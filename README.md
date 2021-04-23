@@ -80,7 +80,7 @@ To run the project , follow the instructions below .
        ./scripts/regenerate-library.sh
   > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library  
 
-## TESTING PLIR SETUP
+## AUTOMATED PLIR TESTING 
 We use the [hie-automation-tests](https://github.com/CDCgov/hie-automation-tests) framework to test the PLIR pipeline work flow . 
 
 Clone the  [extended hie-automation-tests](https://github.com/mozzy11/hie-automation-tests) framework that Supports Testing PLIR workflow.
