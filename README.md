@@ -98,11 +98,12 @@ see more [details](https://github.com/mozzy11/hie-automation-tests/blob/master/P
 * HAPI-FHIR
 
 ### Configuration 
-Follow the Intructions at https://github.com/openmrs/openmrs-plir-dockerized-setup to run a full configured  PLIR setup. 
-
+ 
 Update the Configuration in the config.json file located under the `features/config` folder . ONly OpenMRS , OpenHIM and HapiFHIR are required
 
 NOTE :The deafult  configuration are mapped to the default configuration in the [dockerized PLIR setup](https://github.com/openmrs/openmrs-plir-dockerized-setup)
+
+* The Test will work best before you add any data to OpenMRS
 
 You can execute the test with the below statement under the root directory,but first ensure the PLIR pipeline is up and running.
 
