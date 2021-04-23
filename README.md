@@ -104,7 +104,7 @@ Update the Configuration in the config.json file located under the `features/con
 
 NOTE :The deafult  configuration are mapped to the default configuration in the [dockerized PLIR setup](https://github.com/openmrs/openmrs-plir-dockerized-setup)
 
-You can execute the test with the below statement under the root directory,but first Ensure the PLIR pipeline is up and running.
+You can execute the test with the below statement under the root directory,but first ensure the PLIR pipeline is up and running.
 
 	behave --no-logcapture --include ./features/PLIR
  	
