@@ -99,11 +99,11 @@ see more [details](https://github.com/openmrs/hie-automation-tests/blob/master/P
 
 ### Configuration 
  
-Update the Configuration in the config.json file located under the `features/config` folder . ONly OpenMRS , OpenHIM and HapiFHIR are required
+Update the Configuration in the config.json file located under the `features/config` folder . Only OpenMRS , OpenHIM and HapiFHIR are required
 
 NOTE :The deafult  configuration are mapped to the default configuration in the [dockerized PLIR setup](https://github.com/openmrs/openmrs-plir-dockerized-setup)
 
-See sample observation data Posted to OpenMRS under features/data ie `obs1.json ,obs2.json ,obs3.json` .In case any values are adjusted in the above sample data, adjust the expected TX_PVLS score (rounded off to two decimal places) ie TX_PVLS-SCORE in the config file
+See sample observation data Posted to OpenMRS under `features/data` ie `obs1.json ,obs2.json ,obs3.json` .In case any values are adjusted in the above sample data, adjust the expected TX_PVLS score (rounded off to two decimal places) ie TX_PVLS-SCORE in the config file
 
 * The Test will work best before you add any data to OpenMRS
 
