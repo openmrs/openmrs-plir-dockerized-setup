@@ -1,0 +1,57 @@
+{
+    "resourceType": "Measure",
+    "id": "TX-CURR",
+    "identifier": [
+        {
+            "use": "official",
+            "value": "TX_CURR"
+        }
+    ],
+    "version": "0.0.1",
+    "title": "Sample TX_CURR population selection criteria and evaluation",
+    "status": "draft",
+    "experimental": true,
+    "library": [
+        "Library/TX-CURR"
+    ],
+    "scoring": {
+        "coding": [
+            {
+                "code": "proportion"
+            }
+        ]
+    },
+    "group": [
+        {
+            "id": "population",
+            "population": [
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "code": "initial-population"
+                            }
+                        ]
+                    },
+                    "criteria": {
+                        "language": "application/x-fhir-query",
+                        "expression": "Observation?code=160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&_include=Observation:patient"
+                    }
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "code": "initial-population"
+                            }
+                        ]
+                    },
+                    "criteria": {
+                        "language": "text/cql",
+                        "expression": "Initial population"
+                    }
+                }
+            ]
+        }
+    ]
+}

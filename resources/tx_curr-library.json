@@ -1,0 +1,55 @@
+{
+    "resourceType": "Library",
+    "id": "TX-CURR",
+    "url": "http://fhir.org/plir/Library/TX-CURR",
+    "version": "0.0.1",
+    "name": "TX_CURR",
+    "status": "draft",
+    "experimental": true,
+    "relatedArtifact": [
+        {
+            "type": "depends-on",
+            "resource": "http://hl7.org/fhir/Library/FHIRHelpers|4.0.1"
+        },
+        {
+            "type": "depends-on",
+            "resource": "https://openconceptlab.org/orgs/CIEL/sources/CIEL"
+        }
+    ],
+    "parameter": [
+        {
+            "name": "Measurement Period",
+            "use": "in",
+            "min": 0,
+            "max": "1",
+            "type": "Period"
+        },
+        {
+            "name": "Patient",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "type": "Patient"
+        },
+         {
+            "name": "Currently taking ARV",
+            "use": "out",
+            "min": 0,
+            "max": "*",
+            "type": "Observation"
+        },
+        {
+            "name": "initial-population",
+            "use": "out",
+            "min": 0,
+            "max": "1",
+            "type": "boolean"
+        }
+    ],
+    "content": [
+        {
+            "contentType": "text/cql",
+            "data": "bGlicmFyeSBUWF9DVVJSIHZlcnNpb24gJzAuMC4xJwogIAp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4xJwogIAppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4xJyBjYWxsZWQgRkhJUkhlbHBlcnMKICAKY29kZXN5c3RlbSAiQ0lFTCI6ICdodHRwczovL29wZW5jb25jZXB0bGFiLm9yZy9vcmdzL0NJRUwvc291cmNlcy9DSUVMJwogIApjb2RlICJBbnRpIFJldHJvdmlyYWwgVGhlcmFweSI6ICcxNjAxMTknIGZyb20gIkNJRUwiIGRpc3BsYXkgJ0N1cnJlbnRseSB0YWtpbmcgQVJWJwoKY29kZSAiQ29kZWQgQW5zd2VyIjogJzEwNjUnIGZyb20gIkNJRUwiIGRpc3BsYXkgJ1llcycKICAKcGFyYW1ldGVyICJNZWFzdXJlbWVudCBQZXJpb2QiIEludGVydmFsPERhdGVUaW1lPgogIApjb250ZXh0IFBhdGllbnQKICAKZGVmaW5lICJJbml0aWFsIHBvcHVsYXRpb24iOgogICAgZXhpc3RzICJBbnRpIFJldHJvdmlyYWwgVGhlcmFweSBBZHVsdHMgQW5kIENoaWxkcmVuIgogIApkZWZpbmUgIkFudGkgUmV0cm92aXJhbCBUaGVyYXB5IEFkdWx0cyBBbmQgQ2hpbGRyZW4iOgogICAgKCBbT2JzZXJ2YXRpb246ICJBbnRpIFJldHJvdmlyYWwgVGhlcmFweSJdICkgbwogICAgICAgIHdoZXJlIG8udmFsdWUuY29kaW5nWzFdPSAiQ29kZWQgQW5zd2VyIgogICAgICAgIG9yIG8udmFsdWUuY29kaW5nWzJdPSAiQ29kZWQgQW5zd2VyIgogICAgICAgIGFuZCBvLnN0YXR1cyBpbiB7J2ZpbmFsJywgJ2FtZW5kZWQnLCAnY29ycmVjdGVkJ30KICAgICAgICBhbmQgby5lZmZlY3RpdmUgaW4gZGF5IG9mICJNZWFzdXJlbWVudCBQZXJpb2QiCg"
+        }
+    ]
+}
