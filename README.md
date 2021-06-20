@@ -81,6 +81,12 @@ To run the project , follow the instructions below .
   > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library  
 
 ## AUTOMATED PLIR TESTING 
+![Build Status](https://github.com/openmrs/hie-automation-tests/actions/workflows/plir.yml/badge.svg)
+
+You can run the tests in the CI enviroment .see [PLIR CI Automated Testing](https://github.com/openmrs/hie-automation-tests/actions/workflows/plir.yml)
+
+To set up a local Testing enviroment , Follow the steps below .
+
 Clone the  [hie-automation-tests](https://github.com/openmrs/hie-automation-tests) framework that Supports Testing PLIR workflow.
 
     git clone https://github.com/openmrs/hie-automation-tests.git
