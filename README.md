@@ -81,9 +81,7 @@ To run the project , follow the instructions below .
   > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library  
 
 ## AUTOMATED PLIR TESTING 
-We use the [hie-automation-tests](https://github.com/CDCgov/hie-automation-tests) framework to test the PLIR pipeline work flow . 
-
-Clone the  [extended hie-automation-tests](https://github.com/openmrs/hie-automation-tests) framework that Supports Testing PLIR workflow.
+Clone the  [hie-automation-tests](https://github.com/openmrs/hie-automation-tests) framework that Supports Testing PLIR workflow.
 
     git clone https://github.com/openmrs/hie-automation-tests.git
 
