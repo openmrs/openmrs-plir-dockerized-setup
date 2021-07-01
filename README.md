@@ -26,9 +26,9 @@ To run the project , follow the instructions below .
 
 
    Note:
- * The OpenMRS Instance is pre-loaded with CIEL and a  sample form (HIV_form) to collect TX_PVLS specific data
+ * The OpenMRS Instance is pre-loaded with CIEL and a  sample form (HIV_form) to collect TX_PVLS, specific data and also TX_CURR data
 
- * The above script also loads the necesary TX_PVLS Measure and Library Resources into the Hapi FHir . see the Resources under the `resources` folder.
+ * The above script also loads the necesary TX_PVLS,TX_CURR Measure and Library Resources into the Hapi FHir . see the Resources under the `resources` folder.
 
  * The Openhim instance is pre-configured with the necesary meta-data
 
@@ -36,15 +36,21 @@ To run the project , follow the instructions below .
 
    
 
-  4. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for TX_PVLS
+  4. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for 
+  
+  TX_PVLS:
+        GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>
 
-
-          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>
-   
+  TX_CURR:
+         GET: http://localhost:8090/fhir/Measure/TX-CURR/$collect-data?periodStart=<date>&periodEnd=<date>
 
   5. Invoke the  **evaluate-measure** FHIR Operation using the GET request below for the  indicator calculation based on CQL evaluation
-
+   
+   TX_PVLS:
          GET: http://localhost:8090/fhir/Measure/TX-PVLS/$evaluate-measure?periodStart=<date>&periodEnd=<date> 
+
+   TX_CURR: 
+          GET: http://localhost:8090/fhir/Measure/TX-CURR/$evaluate-measure?periodStart=<date>&periodEnd=<date>      
          
   > Note : substitute `<date>` in the GET request with your actual date parameter  .  
 
@@ -61,7 +67,7 @@ To run the project , follow the instructions below .
 
  * you should be able to access the widget at `http://localhost:7000/` .
 
->  Procede to select the measure  TX-PVLS ,
+>  Procede to select the measure  TX-PVLS,TX_CURR ,
       select the start date and generate the report using the widget
       
 
@@ -71,14 +77,14 @@ To run the project , follow the instructions below .
           ./stop.sh
 
  ## Auto Regenerating the TX_PVLS Library resource    
- In case changes have been made to the Library cql logic at  `resources/cql_logic.txt`  , the  TX_PVLS Library resource  at  `resources/tx_pvls-library.json`  can be auto re-generated .
+ In case changes have been made to the Library cql logic at  `resources/tx_pvls_cql.txt` or`resources/tx_curr_cql.txt`   , the  TX_PVLS,TX_CURR Library resources at  `resources/tx_pvls-library.json` & `resources/tx_curr-library.json` can be auto re-generated .
 
  * install the [jq](https://linuxhint.com/bash_jq_command/) library 
 
  * run the command below from the root directory
 
-       ./scripts/regenerate-library.sh
-  > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS Library  
+       ./scripts/regenerate_tx_pvls-library.sh or ./scripts/regenerate_tx_curr-library.sh
+  > The above script encodes the cql logic into Base64 format and rebuilds the TX_PVLS/TX_CURR Library  
 
 ## AUTOMATED PLIR TESTING 
 ![Build Status](https://github.com/openmrs/hie-automation-tests/actions/workflows/plir.yml/badge.svg)
@@ -118,7 +124,8 @@ Execute the test with the  command below, under the root directory,but first ens
 The tests will
  * Post Obs data into OpenMRS 
  * Track the transactions in OpenHIM
- * Check whether the correct TX_PVLS indicator measureScore was calculated in HAPI FHIR   
+ * Check whether the correct TX_PVLS indicator measureScore was calculated in HAPI FHIR  
+ * Check whether the correct TX_CURR indicator measureScore was calculated in HAPI FHIR    
 
 
 ## Main Repositories
