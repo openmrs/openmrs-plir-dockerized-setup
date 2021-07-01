@@ -1,0 +1,25 @@
+library TX_CURR version '0.0.1'
+  
+using FHIR version '4.0.1'
+  
+include FHIRHelpers version '4.0.1' called FHIRHelpers
+  
+codesystem "CIEL": 'https://openconceptlab.org/orgs/CIEL/sources/CIEL'
+  
+code "Anti Retroviral Therapy": '160119' from "CIEL" display 'Currently taking ARV'
+ 
+code "Coded Answer": '1065' from "CIEL" display 'Yes'
+ 
+parameter "Measurement Period" Interval<DateTime>
+  
+context Patient
+  
+define "Initial population":
+    exists "Anti Retroviral Therapy Adults And Children"
+  
+define "Anti Retroviral Therapy Adults And Children":
+    ( [Observation: "Anti Retroviral Therapy"] ) o
+        where o.value.coding[1]= "Coded Answer"
+        or o.value.coding[2]= "Coded Answer"
+        and o.status in {'final', 'amended', 'corrected'}
+        and o.effective in day of "Measurement Period"
