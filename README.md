@@ -39,10 +39,10 @@ To run the project , follow the instructions below .
   4. Invoke the **collect-data** FHIR Operation using the GET request below to generate the relevant Dataset for 
   
   	TX_PVLS:     
-           `GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>`
+                GET: http://localhost:8090/fhir/Measure/TX-PVLS/$collect-data?periodStart=<date>&periodEnd=<date>
 
  	 TX_CURR:    
-         `GET: http://localhost:8090/fhir/Measure/TX-CURR/$collect-data?periodStart=<date>&periodEnd=<date>`
+         	GET: http://localhost:8090/fhir/Measure/TX-CURR/$collect-data?periodStart=<date>&periodEnd=<date>
 
   5. Invoke the  **evaluate-measure** FHIR Operation using the GET request below for the  indicator calculation based on CQL evaluation
    
